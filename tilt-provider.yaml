@@ -1,0 +1,11 @@
+---
+- name: vm-operator-dev
+  config:
+    version: v1.9.0
+    label: VMOP-DEV
+    image: gcr.io/k8s-staging-capi-vsphere/extra/vm-operator:dev
+    live_reload_deps:
+      - main.go
+    kustomize_folder: "/config/dev/v1.9.0-567-g93918c59"
+    kustomize_options:
+      - "--load-restrictor=LoadRestrictionsNone"

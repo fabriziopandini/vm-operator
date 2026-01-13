@@ -44,6 +44,9 @@ init_build_flags() {
     BUILD_FLAGS+=(--build-arg BUILD_NUMBER="${BUILD_NUMBER}")
     BUILD_FLAGS+=(--build-arg BUILD_VERSION="${BUILD_VERSION}")
 
+    ## FP: added to fix local build for multiarch image
+    BUILD_FLAGS+=(--provenance false)
+
     if [ -n "${BASE_IMAGE:-}" ]; then
         BUILD_FLAGS+=(--build-arg BASE_IMAGE="${BASE_IMAGE}")
     fi
